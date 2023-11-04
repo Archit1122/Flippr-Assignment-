@@ -1,0 +1,38 @@
+.red{
+    color: red;
+}
+table {
+    width: 1000px;
+    border: 1px solid black;
+    margin-left:auto;
+    margin-right:auto;
+    padding-bottom: 32px;
+  }
+
+.main-container{
+    background-color: rgb(246, 246, 146);
+    color: black;
+    margin-right: 20px;
+    margin-left: 20px;    
+}
+.title{
+    padding:14px;
+    font-size: 35px;
+    margin-left:400px;
+}
+.custom{
+    padding:20px;
+    width:1000px;
+    margin-left:auto;
+    margin-right: auto;
+}
+.search{
+    margin-top: 24px;
+    padding:24px;
+    width:60%;
+}
+.filter{
+    margin-top: 14px;
+    padding:4px;
+    width:60%;
+}

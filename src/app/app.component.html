@@ -1,0 +1,54 @@
+<div class="main-container">
+<div class="title">Nobel Prize Winners List</div>
+<div class="custom row">Custom search:
+  <div class="col-sm dropdown">
+    please select initial year
+  <select [(ngModel)]="selectedInitialYear" >
+    <option *ngFor="let year of yearList">{{year}}</option>
+ </select>
+</div>
+<div class="col-sm dropdown">
+  please select last year
+  <select [(ngModel)]="selectedLastYear" >
+    <option *ngFor="let yearL of yearList">{{yearL}}</option>
+ </select>
+</div>
+<div class="col-sm dropdown">
+  please select category
+  <select [(ngModel)]="selectedCategory" >
+    <option *ngFor="let category of categoryList">{{category}}</option>
+ </select>
+</div>
+  <div class="filter">
+  <button type="button search" (click)="filter()" class="btn btn-success">filter with selected data</button>
+</div>
+<div class="filter">
+  <button type="button search" (click)="resetFilter()" class="btn btn-success">Reset Filter</button>
+</div>
+
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Year</th>
+      <th scope="col">Category</th>
+      <th scope="col">Names</th>
+      <th scope="col">Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let a of filteredList?.prizes; let index = index">
+      <td>{{a.year}}</td>
+      <td>{{a.category}}</td>
+      <td>
+        <span *ngIf="a.laureates">
+        <span *ngFor="let laureate of a.laureates">
+        {{laureate.firstname}}<br>
+      </span></span></td>
+      <td *ngIf="a.laureates"> {{a.laureates[0]?.motivation}}</td>
+      <td *ngIf="!a.laureates"> not awarded</td>
+    </tr>   
+  </tbody>
+</table>
+</div>
